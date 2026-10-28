@@ -1,29 +1,37 @@
-# Welcome to your Lovable project
+# 🎬 IMovies — Book Movie Tickets
 
-This project was built with [Lovable](https://lovable.dev).
+A sleek, dark-themed movie ticket booking app built with **TanStack Start** (React 19), **TypeScript**, and **Tailwind CSS v4**.
 
-## Build with Lovable
+**Live demo:** [https://imovies-cinema.lovable.app](https://imovies-cinema.lovable.app)
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+> **Note:** This build runs entirely on sample data with a simulated checkout. Bookings are stored on the visitor's own device (localStorage) — there is no server-side database or shared seat state yet.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## ✨ Features
 
-## Development
+- **Browse movies** — cinematic hero section with a featured film, plus a filterable grid (search by title, filter by genre, language, city, and date)
+- **Movie pages** — poster, rating, runtime, release date, cast, and synopsis for each title
+- **Showtimes** — five days of showtimes across three theatres in Mumbai, Delhi, and Bengaluru
+- **Seat selection** — interactive seat map with premium rows priced higher and a few "already booked" seats per show
+- **Simulated checkout** — ticket price + convenience fee, fake payment flow, instant confirmation
+- **My Bookings** — view past bookings and cancel up to **2 hours** before showtime for a full refund
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## 🛠️ Tech stack
+
+| Layer     | Tech                                                        |
+| --------- | ----------------------------------------------------------- |
+| Framework | TanStack Start v1 (full-stack React, SSR-ready, Vite 7)     |
+| Routing   | TanStack Router (file-based, `src/routes/`)                  |
+| UI        | React 19, Tailwind CSS v4, Radix UI primitives, lucide-react |
+| State     | React Query for async state; localStorage for bookings       |
+| Testing   | Vitest + React Testing Library                               |
+| Linting   | ESLint + Prettier                                            |
+
+## 🚀 Getting started
+
+Prerequisites: **Node.js 20+** (install with [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
 ```sh
 git clone <this-repository-url>
 cd <repository-name>
-npm i
+npm install
 npm run dev
-```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
