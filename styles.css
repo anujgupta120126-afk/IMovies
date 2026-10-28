@@ -1,0 +1,78 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "Manrope", sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-seat: var(--seat);
+  --color-seat-booked: var(--seat-booked);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.13 0.008 20);
+  --foreground: oklch(0.96 0.005 60);
+  --card: oklch(0.18 0.01 20);
+  --card-foreground: oklch(0.96 0.005 60);
+  --popover: oklch(0.18 0.01 20);
+  --popover-foreground: oklch(0.96 0.005 60);
+  --primary: oklch(0.6 0.23 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.24 0.012 20);
+  --secondary-foreground: oklch(0.96 0.005 60);
+  --muted: oklch(0.22 0.01 20);
+  --muted-foreground: oklch(0.68 0.015 40);
+  --accent: oklch(0.26 0.03 25);
+  --accent-foreground: oklch(0.96 0.005 60);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.28 0.012 20);
+  --input: oklch(0.28 0.012 20);
+  --ring: oklch(0.6 0.23 25);
+  --gold: oklch(0.82 0.15 80);
+  --seat: oklch(0.3 0.012 20);
+  --seat-booked: oklch(0.2 0.005 20);
+  --gradient-fade: linear-gradient(to top, var(--background) 10%, transparent);
+  --shadow-glow: 0 10px 40px -10px color-mix(in oklab, var(--primary) 60%, transparent);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body { background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0.03em; }
+}
+
+@utility bg-fade { background-image: var(--gradient-fade); }
+@utility shadow-glow { box-shadow: var(--shadow-glow); }
+@utility screen-curve {
+  border-top: 4px solid var(--primary);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  box-shadow: 0 -12px 30px -8px var(--primary);
+}
